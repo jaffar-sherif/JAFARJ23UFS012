@@ -41,7 +41,7 @@ function testForPrime(numberToTest){
 			return false;
 		}
 	}
-	//if numberToTest is prime returnd true
+	//if numberToTest is prime return true
 	return true;
 }
 
