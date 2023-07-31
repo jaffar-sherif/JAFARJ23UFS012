@@ -1,0 +1,169 @@
+1. What are the HTML5 <audio> and <video> tags used for?
+Ans: The HTML5 audio element is used to embed an audio file in the webpage,
+, video element is used to embed a video file in the webpage,mostly it works on the modern web browser.
+2.How do you embed an audio file using the <audio> tag? Provide an example.
+Ans:<audio controls="controls" src="/media/sample-12s.wav.crdownload">
+                Your browser does not support audio tags
+        </audio>
+        <audio controls>
+            <source src="/media/sample-9s.wav.crdownload">
+        </audio>
+3.How do you embed a video file using the <video> tag? Provide an example.
+Ans: <html>
+    <head>
+        <title>Video tag embed</title>
+    </head>
+    <body>
+        <video src="/media/sample_video1.mp4" width="400" controls>
+            Your browser does not support video tags
+        </video>
+        <video controls width="450">
+            <source src="/media/sample-3.mp4">
+            Your browser does not support video tags
+        </video>
+    </body>
+</html>
+4.What are the attributes commonly used with the <audio> and <video> tags?
+Ans:Audio tag attributes:
+             Attributes                              Values                                           Usage
+       i)       src                                 sample1.mp3                             It is used to add a mp3 files likes songs etc.
+      ii)     controls                                  -                                         It is used to show pause/play controls ,volume adjustmentcontrols
+     iii)     Autoplay                                                                          The mp3 file starts playing when the webpage loads
+     iv)      Muted                                                                             When the autoplay is enabled ,some users don't like to hear audio when the page loads
+                                                                                                       ,so if muted is enabled the volume completely sets to 0.
+      v)   Loop                                                                                   The mp3 file play continuously when the song finish playing.
+      vi)  controlsList                        nodownload                           The download feature is enabled noramlly if the controls are enabled,we can make download option disable using this attribute.
+   
+      Video tag attributes:
+             Attributes                              Values                                           Usage
+       i)    src                                    earth_video.mp4                       used to add a mp4 file 
+      ii)   controls                                                                             To show pause/play feature ,volume adjustment etc.
+     iii)   Autoplay                                                                            the video file starts playing when the page loads
+     iv)  Muted                                                                                on page loads the video is muted .
+      v) Loop                                                                                   the video file runs continuosly when it is ended.
+    vi)  width                                      in px(pixels)                          defines the width of the video player.
+     vii) height                                     in px(pixels)                         defines the height of the video player.
+   viii) poster                                     any image file(png,jpeg)       It is viewed in the video player as thumbnail it does not work if autoplay attribute is enabled.
+   ix)   controlsList                                                                           if the value is given as nodownload,the download option is disabled.
+    x)    track                                           sub.vtt(subtitle file)         used to add subtitle for the video plays on the video player.
+
+5.How do you specify alternative content for browsers that do not support the <audio> and <video> tags?
+Ans:Most of the modern browsers support audio and video tags ,some version of browser does not support these tags
+we can indicate by adding "Your browser does not support this tag".
+ex:<audio controls src="sample.mp3" width="350">Your browser does not support audio tag</audio>
+     <video src="sample2.mp4" controls width="400">Your browser does not support video tag</video>
+
+6.How can you control the playback of an audio or video element using JavaScript?
+Ans: define an audio tag with source file and controls also give the audio tag id attribute and give some value,now in javascript file query the id and store it in a
+javascript variable,now create a function and check if the video is paused, if it is pause make it play,otherwise pause the video.
+ex: <html>
+    <head>
+        <title>Video tag embed</title>
+    </head>
+    <body>
+        <video src="/media/sample_video1.mp4" id="video" width="400" controls>
+            Your browser does not support video tags
+        </video>
+	<button onclick="playPause()">Play</button>
+        <script>
+            var myVideo=document.querySelector("video");
+
+            function playPause(){
+                if(myVideo.paused){
+                    myVideo.play();
+                }else{
+                    myVideo.pause();
+                }
+            }
+        </script>
+    </body>
+
+7.How do you make an audio or video file play automatically when the page loads?
+Ans: To make an audio or video file play automatically when the page loads , we can add "autoplay" attribute,
+whic plays audio or video on page load.
+
+8.How do you set a specific width and height for a video element?
+Ans: To set a specific height or width of a video element ,we use "width" attribute and "height" attribute ,which accepts the value.
+ex:<video src="sample2.mp4" controls width="350" height="350">Your browser does not support tag</video>
+
+9.What is the purpose of the controls attribute in the <video> tag?
+Ans: The controls attribute enables the video  to pause and play ,adjust volume . without controls attribute the video cannot play.
+
+10.How can you make a video element loop and play continuously?
+Ans:To make the video element to play in loop ,we use "autoplay" attribute.which plays the video from start once it ends.
+
+11.What are the different video formats supported by HTML5 video, and why is having multiple formats important?
+Ans:There are three video forms supported by HTML5 they are mp4, webm, OGG. 
+There are many formats because some browser supports mp4 file so it loads the mp4 source file,some broweser supports webm format it loads
+webm format.This is why we having multiple formats.
+
+12.How can you add subtitles or captions to a video using HTML5?
+Ans:We can add a subtitle for a video element in HTML5 using "track" attribute,we should pass the subtitle file(.vtt) as a value for the attribute.
+
+13.What is the difference between the preload and autoplay attributes in the <video> tag?
+Ans:Preload attribute is used to what should load when page gets loaded,we have three values for preload attribute
+"auto" , "metadata" , "none".Auto value loads the whole video file when the page gets loaded.
+metadata loads metadata when the page gets loaded, none does not load a video .
+
+Autoplay attribute used to start playing the video once the page gets loaded.
+
+Preload attribute does not work if the autoplay attribute is declared.
+
+14.How can you use the poster attribute to display an image as a placeholder for a video?
+Ans:Define a video tag with source , controls and add a poster attribute set a value as a image file(jpeg etc).
+<video src="sampel_video.mp4" controls poster="thumbnail.jpg">Your browser does not support video tag</video>
+
+15.What is the purpose of the muted attribute in the <video> tag?
+Ans: The muted attribute mutes the video once the page gets loaded,this is used because if the video has enabled autoplay feature the some clients does not
+like hearing the sound suddenly when page loads so we can use muted attribute and mute the video.Later the client adjust the volume.
+
+16.How can you capture user interaction events (e.g., play, pause, seek) with audio and video elements using JavaScript?
+Ans:Create a video tag with source and add controls to it also add id attribute and a value for id.Now capture the id and create a
+function in javascript and check the video is playing or not ,if it is playing just pause it by using pause property and play if it is
+paused by play property.
+ex:    <head>
+        <title>Video tag embed</title>
+    </head>
+    <body>
+        <video src="/media/sample_video1.mp4" id="video" width="400" controls>
+            Your browser does not support video tags
+        </video>
+	<button onclick="playPause()">Play</button>
+	<button onclick="makeBig()">makeBig</button>	
+        <script>
+            var myVideo=document.querySelector("video");
+
+            function playPause(){
+                if(myVideo.paused){
+                    myVideo.play();
+                }else{
+                    myVideo.pause();
+                }
+            }
+
+            function makeBig(){
+                myVideo.width=560;
+            }
+
+        </script>
+    </body>
+
+17.How do you use the <track> element to add timed text tracks to a video?
+Ans:Using track element define a kind , source which is vtt file , src-lang and label.
+ex:<video id="video"  muted loop controls src="../media/Sample Video Practice Transcribing.mp4" width="400"  preload="metadata" >
+           
+            <track kind="captions" src="/media/Sample Video Practice Transcribing.vtt" srclang="en-us" label="English">
+
+        </video>
+18.How can you make a video element go fullscreen using JavaScript?
+
+Ans:<video id="video" controls src="../media/Sample Video Practice Transcribing.mp4" width="400">
+
+        </video> 
+        <button onclick="fullScreen()">Request Fullscreen</button>
+        <script>
+            var myVideo=document.querySelector("video");
+             function fullScreen(){
+                myVideo.requestFullscreen();
+            }
+       </script>
