@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jquery Workbook</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            // $(function(){
+            //     $("p").each(function(index){
+            //         $(this).text("Your ID is: "+this.id+" and index: "+index);
+            //     })
+            //     $(".highlighted").css("background","yellow")
+            // })
+
+            $(function(){
+                 var box=$("div.box");
+                 box.css("border-style","solid");
+                 box.css("border-width","2px");
+
+                 var title=$("div.box div:first-child");
+                 title.css("background-color","black");
+                 title.css("color","white");
+                // $("div.box").css("border-style","solid");
+                // $("div.box").css("border-width","2px");
+
+                // $("div.box div:first-child").css("background-color","black");
+                // $("div.box div:first-child").css("color","white");
+            })
+        </script>
+    </head>
+    <body>
+        <p id="p1" class="highlighted"></p>
+        <p id="p2"></p>
+
+        <!-- <div class="box">
+            <div>This is a title</div>
+            <div>This is the box <br> Body</div>
+        </div> -->
+
+        <div class="box">
+            <div>Company News</div>
+            <ul>
+                <li>Stock price has gone up</li>
+                <li>Tomorrow is a holiday</li>
+            </ul>
+        </div>
+    </body>
+</html>
